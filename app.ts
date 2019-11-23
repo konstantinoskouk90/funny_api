@@ -3,8 +3,10 @@ import * as json from "koa-json";
 import * as bodyParser from "koa-bodyparser";
 import * as cors from "@koa/cors";
 
-import quoteRouter from "./routes/quote-router";
-import motivateRouter from "./routes/motivate-router";
+import InsultRouter from "./routes/insult.router";
+import MotivateRouter from "./routes/motivate.router";
+import PraiseRouter from "./routes/praise.router";
+import QuoteRouter from "./routes/quote.router";
 
 class App {
 
@@ -31,8 +33,10 @@ class App {
   }
 
   private routes(): void {
-    this.app.use(quoteRouter.routes());
-    this.app.use(motivateRouter.routes());
+    this.app.use(InsultRouter.routes());
+    this.app.use(MotivateRouter.routes());
+    this.app.use(PraiseRouter.routes());
+    this.app.use(QuoteRouter.routes());
   }
 }
 

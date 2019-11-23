@@ -1,6 +1,6 @@
 import * as Router from "koa-router";
 
-import QuoteController from "../controllers/quote-controller";
+import QuoteController from "../controllers/quote.controller";
 
 class QuoteRouter {
 
