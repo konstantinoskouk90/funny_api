@@ -5,6 +5,7 @@ import * as cors from "@koa/cors";
 
 import InsultRouter from "./routes/insult.router";
 import KaraokeRouter from "./routes/karaoke.router";
+import LanguageRouter from "./routes/language.router";
 import MotivateRouter from "./routes/motivate.router";
 import PraiseRouter from "./routes/praise.router";
 import QuoteRouter from "./routes/quote.router";
@@ -36,6 +37,7 @@ class App {
   private routes(): void {
     this.app.use(InsultRouter.routes());
     this.app.use(KaraokeRouter.routes());
+    this.app.use(LanguageRouter.routes());
     this.app.use(MotivateRouter.routes());
     this.app.use(PraiseRouter.routes());
     this.app.use(QuoteRouter.routes());
