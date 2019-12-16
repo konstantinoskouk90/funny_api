@@ -1,8 +1,10 @@
-import * as Koa from "koa";
-import * as json from "koa-json";
-import * as bodyParser from "koa-bodyparser";
-import * as cors from "@koa/cors";
+import Koa from "koa";
+import json from "koa-json";
+import bodyParser from "koa-bodyparser";
+import cors from "@koa/cors";
+import serve from "koa-static";
 
+import DiceRouter from "./routes/dice.router";
 import InsultRouter from "./routes/insult.router";
 import KaraokeRouter from "./routes/karaoke.router";
 import LanguageRouter from "./routes/language.router";
@@ -22,9 +24,10 @@ class App {
   }
 
   private config(): void {
-    this.app.use(json({ pretty: false, param: 'pretty' }));
+    this.app.use(json({ pretty: true, param: 'pretty' }));
     this.app.use(bodyParser());
     this.app.use(cors());
+    this.app.use(serve(`${__dirname}/public`));
     this.app.use((ctx: Koa.Context, next: Function) => {
       ctx.set('Access-Control-Allow-Origin', '*');
       ctx.set('Access-Control-Allow-Methods', 'OPTIONS, GET');
@@ -32,15 +35,22 @@ class App {
 
       next();
     });
+
+    this.extendContext();
   }
 
   private routes(): void {
+    this.app.use(DiceRouter.routes());
     this.app.use(InsultRouter.routes());
     this.app.use(KaraokeRouter.routes());
     this.app.use(LanguageRouter.routes());
     this.app.use(MotivateRouter.routes());
     this.app.use(PraiseRouter.routes());
     this.app.use(QuoteRouter.routes());
+  }
+
+  private extendContext(): void {
+    this.app.context.rootUrl = __dirname;
   }
 }
 

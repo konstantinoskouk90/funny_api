@@ -1,8 +1,8 @@
 import Router from "koa-router";
 
-import PraiseController from "../controllers/praise.controller";
+import DiceController from "../controllers/dice.controller";
 
-class PraiseRouter {
+class DiceRouter {
 
   router: Router;
 
@@ -14,13 +14,13 @@ class PraiseRouter {
 
   private init(): void {
     this.router = new Router({
-      prefix: "/praise"
+      prefix: "/dice"
     });
   }
 
   private getRoutes(): void {
-    this.router.get("/", PraiseController.get);
+    this.router.get("/", DiceController.get);
   }
 }
 
-export default new PraiseRouter().router;
+export default new DiceRouter().router;
