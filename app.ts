@@ -6,6 +6,7 @@ import serve from "koa-static";
 
 import DiceRouter from "./routes/dice.router";
 import InsultRouter from "./routes/insult.router";
+import JokeOrStoryRouter from "./routes/joke-or-story.router";
 import KaraokeRouter from "./routes/karaoke.router";
 import LanguageRouter from "./routes/language.router";
 import MotivateRouter from "./routes/motivate.router";
@@ -42,6 +43,7 @@ class App {
   private routes(): void {
     this.app.use(DiceRouter.routes());
     this.app.use(InsultRouter.routes());
+    this.app.use(JokeOrStoryRouter.routes());
     this.app.use(KaraokeRouter.routes());
     this.app.use(LanguageRouter.routes());
     this.app.use(MotivateRouter.routes());

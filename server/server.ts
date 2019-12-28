@@ -6,9 +6,9 @@ const port: number = 3000;
 (() => {
   try {
     http.createServer(app.callback()).listen(port, () => {
-      console.info(`Koa server listening on port ${port}`);
+      console.info(`Server listening on port ${port}..`);
     });
   } catch (err) {
-    console.error(`Unable to connect to the server!`, err);
+    console.error(`Unable to connect to server!`, err);
   }
 })();
