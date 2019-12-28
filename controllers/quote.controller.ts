@@ -2,6 +2,15 @@ import { Context } from "koa";
 
 export default class QuoteController {
 
+  static getArnoldSchwarzenegger = async (ctx: Context) => {
+    ctx.body = {
+      title: "Arnold Schwarzenegger Quote",
+      content: "I need your clothes, your boots and your motorcycle."
+    };
+
+    ctx.status = 200;
+  }
+
   static getBillGates = async (ctx: Context) => {
     ctx.body = {
       title: "Bill Gates Quote",
@@ -42,15 +51,6 @@ export default class QuoteController {
     ctx.body = {
       title: "Lady Gaga Quote",
       content: "I've always been famous, it's just no one knew it yet."
-    };
-
-    ctx.status = 200;
-  }
-
-  static getArnoldSchwarzenegger = async (ctx: Context) => {
-    ctx.body = {
-      title: "Arnold Schwarzenegger Quote",
-      content: "I need your clothes, your boots and your motorcycle."
     };
 
     ctx.status = 200;

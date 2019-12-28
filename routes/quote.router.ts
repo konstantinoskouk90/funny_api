@@ -20,12 +20,12 @@ class QuoteRouter {
 
   private getRoutes(): void {
     this.router
-      .get("/billgates", QuoteController.getBillGates)
-      .get("/donaldtrump", QuoteController.getDonaldTrump)
-      .get("/kanyewest", QuoteController.getKanyeWest)
-      .get("/kimkardashian", QuoteController.getKimKardashian)
-      .get("/ladygaga", QuoteController.getLadyGaga)
-      .get("/arnoldschwarzenegger", QuoteController.getArnoldSchwarzenegger);
+      .get("/arnold-schwarzenegger", QuoteController.getArnoldSchwarzenegger)
+      .get("/bill-gates", QuoteController.getBillGates)
+      .get("/donald-trump", QuoteController.getDonaldTrump)
+      .get("/kanye-west", QuoteController.getKanyeWest)
+      .get("/kim-kardashian", QuoteController.getKimKardashian)
+      .get("/lady-gaga", QuoteController.getLadyGaga);
   }
 }
 
