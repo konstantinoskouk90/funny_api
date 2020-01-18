@@ -11,6 +11,7 @@ import KaraokeRouter from "./routes/karaoke.router";
 import LanguageRouter from "./routes/language.router";
 import MotivateRouter from "./routes/motivate.router";
 import PraiseRouter from "./routes/praise.router";
+import RandomRouter from "./routes/random.router";
 import QuoteRouter from "./routes/quote.router";
 import WishRouter from "./routes/wish.router";
 
@@ -49,6 +50,7 @@ class App {
     this.app.use(LanguageRouter.routes());
     this.app.use(MotivateRouter.routes());
     this.app.use(PraiseRouter.routes());
+    this.app.use(RandomRouter.routes());
     this.app.use(QuoteRouter.routes());
     this.app.use(WishRouter.routes());
   }
