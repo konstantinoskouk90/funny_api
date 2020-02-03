@@ -5,7 +5,7 @@ export default class RandomController {
   static getColor = async (ctx: Context) => {
     ctx.body = {
       title: "Random Color",
-      content: "Blue"
+      content: "Blue."
     };
 
     ctx.status = 200;
